@@ -1,0 +1,18 @@
+# find comman follwers between two social media accounts 
+"""
+Created on Mon Mar 16 15:36:59 2026
+
+@author: Aiman
+"""
+
+# Followers of Account 1
+account1 = {"Aman", "Riya", "Rahul", "Sara", "Ali"}
+
+# Followers of Account 2
+account2 = {"Sara", "Ali", "Rohan", "Riya", "Neha"}
+
+# Find common followers
+common_followers = account1.intersection(account2)
+
+# Display result
+print("Common Followers:", common_followers)
