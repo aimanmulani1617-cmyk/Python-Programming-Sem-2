@@ -1,0 +1,20 @@
+# A teacher stores marks of students in alist to find the topper 
+"""
+Created on Mon Mar 16 15:52:00 2026
+
+@author: Aiman
+"""
+
+# List storing marks of students
+marks = [75, 82, 90, 68, 88]
+
+# Calculate average marks
+average = sum(marks) / len(marks)
+
+# Find topper marks
+topper = max(marks)
+
+# Display results
+print("Marks of students:", marks)
+print("Average Marks:", average)
+print("Topper Marks:", topper)
