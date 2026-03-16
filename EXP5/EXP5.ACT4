@@ -1,0 +1,24 @@
+# count frequency of items purchased by customers 
+"""
+Created on Mon Mar 16 15:33:29 2026
+
+@author: Aiman 
+"""
+
+# List of items purchased by customers
+items = ["Pen", "Notebook", "Pen", "Pencil", "Notebook", "Pen"]
+
+# Dictionary to store frequency
+frequency = {}
+
+# Counting frequency
+for item in items:
+    if item in frequency:
+        frequency[item] += 1
+    else:
+        frequency[item] = 1
+
+# Display result
+print("Item Purchase Frequency:")
+for item, count in frequency.items():
+    print(item, ":", count)
