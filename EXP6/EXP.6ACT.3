@@ -1,0 +1,26 @@
+# Read a complaint file and display all complaints
+"""
+Created on Mon Mar 23 15:35:08 2026
+
+@author: Aiman
+"""
+
+# Function to read and display complaints
+def read_complaints():
+    try:
+        file = open("complaints.txt", "r")
+        print("\n--- Complaint Records ---\n")
+        
+        content = file.read()
+        if content == "":
+            print("No complaints found.")
+        else:
+            print(content)
+        
+        file.close()
+    
+    except FileNotFoundError:
+        print("Complaint file not found. Please create the file first.")
+
+# Main program
+read_complaints()
