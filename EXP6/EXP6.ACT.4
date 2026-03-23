@@ -1,0 +1,25 @@
+# Copy backup data from one file to another.
+"""
+Created on Mon Mar 23 15:40:58 2026
+
+@author: Aiman
+"""
+
+# Function to copy data from one file to another
+def copy_file():
+    try:
+        source = open("source.txt", "r")
+        data = source.read()
+        source.close()
+
+        destination = open("backup.txt", "w")
+        destination.write(data)
+        destination.close()
+
+        print("Data copied successfully from source.txt to backup.txt.")
+
+    except FileNotFoundError:
+        print("Source file not found.")
+
+# Main program
+copy_file()
