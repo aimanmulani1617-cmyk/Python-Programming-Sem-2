@@ -1,0 +1,33 @@
+# Handle invalid age input in registration form
+"""
+Created on Mon Mar 30 15:43:10 2026
+
+@author: Aiman
+"""
+
+# User-defined exception
+class InvalidAgeError(Exception):
+    pass
+
+# Function to validate age
+def check_age(age):
+    if age < 18 or age > 60:
+        raise InvalidAgeError("Age must be between 18 and 60 for registration.")
+    else:
+        print("Registration successful! Age is valid.")
+
+# Main program
+try:
+    name = input("Enter your name: ")
+    age = int(input("Enter your age: "))
+    
+    check_age(age)
+
+except InvalidAgeError as e:
+    print("Error:", e)
+
+except ValueError:
+    print("Error: Please enter a valid integer for age.")
+
+finally:
+    print("Registration process completed.")
