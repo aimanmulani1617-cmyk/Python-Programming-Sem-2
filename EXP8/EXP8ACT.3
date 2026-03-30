@@ -1,0 +1,36 @@
+# Handle invalid product index in shopping cart.
+"""
+Created on Mon Mar 30 15:50:28 2026
+
+@author: Aiman
+"""
+
+# User-defined exception
+class InvalidProductError(Exception):
+    pass
+
+# Function to check product
+def check_product(product, product_list):
+    if product not in product_list:
+        raise InvalidProductError("Product is not available in the shopping cart.")
+    else:
+        print("Product added successfully!")
+
+# Main program
+try:
+    # Available products in store
+    products = ["laptop", "mobile", "headphones", "keyboard"]
+    
+    print("Available products:", products)
+    item = input("Enter product to add to cart: ").lower()
+    
+    check_product(item, products)
+
+except InvalidProductError as e:
+    print("Error:", e)
+
+except Exception:
+    print("Error: Something went wrong.")
+
+finally:
+    print("Shopping process completed.")
