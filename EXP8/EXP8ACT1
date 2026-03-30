@@ -1,0 +1,37 @@
+# ATM withdrawal system handles insufficient balance.
+"""
+Created on Mon Mar 30 15:34:39 2026
+
+@author: Aiman
+"""
+
+# User-defined exception
+class InsufficientBalanceError(Exception):
+    pass
+
+# Function for withdrawal
+def withdraw(balance, amount):
+    if amount > balance:
+        # Raising custom exception
+        raise InsufficientBalanceError("Insufficient balance in your account.")
+    else:
+        balance -= amount
+        print("Withdrawal successful!")
+        print("Remaining balance:", balance)
+    return balance
+
+# Main program
+try:
+    balance = float(input("Enter your account balance: "))
+    amount = float(input("Enter amount to withdraw: "))
+    
+    balance = withdraw(balance, amount)
+
+except InsufficientBalanceError as e:
+    print("Error:", e)
+
+except ValueError:
+    print("Error: Please enter a valid number.")
+
+finally:
+    print("Thank you for using ATM service.")
