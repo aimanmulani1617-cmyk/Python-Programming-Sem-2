@@ -1,0 +1,21 @@
+#Reverse a customer feedback message.
+"""
+Created on Thu Apr 16 22:03:20 2026
+
+@author: Aiman
+"""
+
+# Original customer feedback
+feedback = "The product quality is excellent and delivery was fast"
+
+# Step 1: Split the feedback into a list of words
+words_list = feedback.split()
+
+# Step 2: Reverse the list
+reversed_list = words_list[::-1]
+
+# Step 3: Join the reversed list back into a string
+reversed_feedback = " ".join(reversed_list)
+
+print("Original Feedback:", feedback)
+print("Reversed Feedback:", reversed_feedback)
