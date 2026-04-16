@@ -1,0 +1,17 @@
+# A shop prints multiple copies of receipts. Use nested loops to print item numbers
+"""
+Created on Thu Apr 16 21:54:10 2026
+
+@author: Aiman
+"""
+
+# Number of items in the receipt
+num_items = 5  
+
+# Number of copies of each receipt
+num_copies = 3  
+
+for item in range(1, num_items + 1):       # Outer loop for items
+    for copy in range(1, num_copies + 1):  # Inner loop for copies
+        print(f"Item {item} - Copy {copy}")
+    print()  # Blank line for readability
