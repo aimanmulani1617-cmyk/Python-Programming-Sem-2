@@ -1,0 +1,22 @@
+ A traffic police system checks if a driver is overspeeding. If speed > 60 km/h, show fine meaagge
+"""
+Created on Thu Apr 16 21:43:42 2026
+
+@author: Aiman
+"""
+
+#include <stdio.h>
+int main() {
+int speed;
+
+    printf("Enter your driving speed (km/h): ");
+    scanf("%d", &speed);
+
+    if (speed > 60) {
+        printf("You are overspeeding! Fine imposed.\n");
+    } else {
+        printf("You are driving within the speed limit.\n");
+    }
+
+    return 0;
+}
