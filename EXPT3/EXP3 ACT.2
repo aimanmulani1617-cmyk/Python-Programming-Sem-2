@@ -1,0 +1,32 @@
+# Create a function that calculates EMI based on loan amount, rate, and years.
+"""
+Created on Thu Apr 16 21:57:46 2026
+
+@author: Aiman
+"""
+def calculate_emi(principal, annual_rate, years):
+    # Convert annual rate to monthly rate
+    monthly_rate = annual_rate / (12 * 100)
+    # Total number of months
+    months = years * 12
+    
+    # Calculate (1 + r)^n using a loop
+    power_term = 1
+    for _ in range(months):
+        power_term *= (1 + monthly_rate)
+    
+    # EMI formula: [P * r * (1+r)^n] / [(1+r)^n - 1]
+    numerator = principal * monthly_rate * power_term
+    denominator = power_term - 1
+    
+    emi = numerator / denominator
+    return emi
+
+# Example usage:
+loan_amount = 500000   # Principal
+rate = 7.5             # Annual interest rate in %
+years = 15             # Loan tenure in years
+
+emi_value = calculate_emi(loan_amount, rate, years)
+print(f"Monthly EMI: {emi_value:.2f}")
+
