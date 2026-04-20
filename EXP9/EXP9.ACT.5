@@ -1,0 +1,17 @@
+# Generate OTP using random module.
+"""
+Created on Mon Apr 20 15:16:16 2026
+
+@author: Aiman
+"""
+
+import random
+
+def generate_otp(length=6):
+    # OTP will contain only digits
+    digits = "0123456789"
+    otp = "".join(random.choice(digits) for _ in range(length))
+    return otp
+
+# Example usage
+print("Your OTP is:", generate_otp())
