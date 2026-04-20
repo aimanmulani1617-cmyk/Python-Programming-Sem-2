@@ -1,0 +1,24 @@
+# Create an Employee class that calculates salary with bonus.
+"""
+Created on Mon Apr 20 16:03:12 2026
+
+@author: Aiman
+"""
+
+class Employee:
+    def __init__(self, name, base_salary, bonus_percent):
+        self.name = name
+        self.base_salary = base_salary
+        self.bonus_percent = bonus_percent
+
+    def calculate_total_salary(self):
+        bonus_amount = self.base_salary * (self.bonus_percent / 100)
+        total_salary = self.base_salary + bonus_amount
+        return total_salary
+
+# Example usage
+emp1 = Employee("Alice", 50000, 10)  # 10% bonus
+emp2 = Employee("Bob", 60000, 15)    # 15% bonus
+
+print(f"{emp1.name}'s total salary: {emp1.calculate_total_salary()}")
+print(f"{emp2.name}'s total salary: {emp2.calculate_total_salary()}")
