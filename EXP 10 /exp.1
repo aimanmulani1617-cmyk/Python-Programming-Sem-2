@@ -1,0 +1,47 @@
+ Create a Streamlit grocery bill calculator.
+"""
+Created on Tue May 12 08:34:01 2026
+
+@author: Aiman 
+"""
+
+import streamlit as st
+
+# Title of the app
+st.title("🛒 Grocery Bill Calculator")
+
+# Initialize session state for items
+if "items" not in st.session_state:
+    st.session_state.items = []
+
+# Input fields
+st.header("Add Grocery Item")
+item_name = st.text_input("Item Name")
+item_price = st.number_input("Price per unit", min_value=0.0, format="%.2f")
+item_quantity = st.number_input("Quantity", min_value=1, step=1)
+
+# Add item button
+if st.button("Add Item"):
+    if item_name and item_price > 0:
+        st.session_state.items.append({
+            "name": item_name,
+            "price": item_price,
+            "quantity": item_quantity,
+            "total": item_price * item_quantity
+        })
+        st.success(f"Added {item_quantity} × {item_name} to the list!")
+
+# Display grocery list
+if st.session_state.items:
+    st.header("🧾 Grocery List")
+    total_bill = 0
+    for idx, item in enumerate(st.session_state.items, start=1):
+        st.write(f"{idx}. {item['name']} - {item['quantity']} × ₹{item['price']:.2f} = ₹{item['total']:.2f}")
+        total_bill += item["total"]
+
+    st.subheader(f"💰 Total Bill: ₹{total_bill:.2f}")
+
+    # Option to clear list
+    if st.button("Clear List"):
+        st.session_state.items = []
+        st.info("Grocery list cleared!")
